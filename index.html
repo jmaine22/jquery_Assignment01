@@ -11,7 +11,13 @@
 	  $(function() {
 		$('section > h2').css({"border": "1px solid black", "color": "#CC1C0D", "padding": "3px 0 3px 20px", "border-radius": "0 5px 0 5px", "background-color": "#DFE3E6"});
 		$('aside > h2').css({"border": "1px solid black", "color": "#CC1C0D", "padding": "3px 0 3px 20px", "border-radius": "0 5px 0 5px", "background-color": "#DFE3E6"});
+		$("nav ul li a ").addClass("navigation");
 		$(".navigation").css({"border": "1px solid #929CA4", "color": "#CC1C0D", "padding": "3px 0 3px 20px", "background-color": "#DFE3E6"});
+		$("p").removeClass("vprospect");
+		$("p").removeClass("vconvert");
+		$("p").removeClass("vretain");
+		$("p:contains(President)").append("<br>Chevy Dealers Association");
+		$("p:contains(Throughout)").wrap("<q></q>");
 	});
   </script>
 </head>
@@ -21,11 +27,11 @@
 		<header></header>
 		<nav>
 			<ul>
-				<li><a href="#" class="navigation">Home</a></li>
-				<li><a href="#" class="navigation">About Us</a></li>
-				<li><a href="#" class="navigation">Solutions</a></li>
-				<li><a href="#" class="navigation">Support</a></li>
-				<li><a href="#" class="navigation">Contact Us</a></li>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Solutions</a></li>
+				<li><a href="#">Support</a></li>
+				<li><a href="#">Contact Us</a></li>
 			</ul>
 		</nav>
 		<section>
@@ -35,22 +41,22 @@
 			
 			<h2>Our Solutions</h2> 
 			
-			<p>vProspect 2.0<br>
+			<p class="vprospect">vProspect 2.0<br>
 			Define and research your target audience, define your strategy to reach that audience and present a strong and memorable brand to that audience.</p>
 			
-			<p>vConvert 2.0<br>
+			<p class="vconvert">vConvert 2.0<br>
 			Create a highly user-friendly and easy-to-navigate information architecture that will help your prospects interact with the company on a highly interactive level.</p>
 			
-			<p>vRetain 1.0<br>
+			<p class="vretain">vRetain 1.0<br>
 			Build on existing customer relationships to improve productivity and maximize customer loyalty, while growing revenues.</p>
 		</section>
 		<aside>
 			<h2>Client Testimonials</h2>
 			
-			<q><p>Throughout the years we have worked with Vecta Corporation, we have always been amazed at the level of dedication and professionalism that they have provided us and our WGDC products. It is this commitment that has increased both our income and exposure exponentially.</p></q>
+			<p>Throughout the years we have worked with Vecta Corporation, we have always been amazed at the level of dedication and professionalism that they have provided us and our WGDC products. It is this commitment that has increased both our income and exposure exponentially.</p>
 			
 			<p>Iona Ford<br>
-			President<br> Chevy Dealers Association</p>
+			President</p>
 		</aside>
 		<footer></footer>
 	</main>
