@@ -66,6 +66,15 @@
                     element.css('color', 'red');
                     alert(event.target.nodeName);
                 }
+            });
+            $("a").after("<br><br><div>Wsize:</div>");
+            $(function(){
+                $(window).resize(function () {
+                    let element = $("div:contains(Wsize:)");
+                    element.addClass("Wsize Hsize");
+                    $('.Hsize').text($(window).height());
+                    $('.Wsize').text($(window).width());
+                })
             })
 
         });
