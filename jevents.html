@@ -11,7 +11,63 @@
             $("body").append("<button>alert</button>");
             $('button').click(function () {
                 window.alert("Button has been clicked!");
+            });
+            $("button").after("<br><br><button>Bind</button>");
+            $('button:contains(Bind)').bind('click', function () {
+                window.alert("Button has been clicked!");
+            });
+            $("button:contains(Bind)").after("<br><br><button>.on</button>");
+            $('button:contains(.on)').on('click', () => {
+                window.alert("Button has been clicked!");
+            });
+            $("button:contains(.on)").after("<br><br><button>.on1</button> " + "<button>.on2</button>");
+            $(function() {
+                $('body').on('click',"button:contains(.on2), button:contains(.on1)", function () {
+                    window.alert("Button has been clicked!");
+                });
+            });
+            $("button:contains(.on2)").after("<br><br><div>This is my div tag</div>");
+            $("div").css({"width": "400px", "height": "400px", "background-color": "green"});
+            $("div").on({
+                click: function() {
+                    window.alert("You clicked on the div!");
+                },
+                mouseenter: function() {
+                    window.console.log("Hovered over the div!");
+                    //window.alert("Hovered over the div!");
+                },
+                mouseleave: function() {
+                    window.console.log("The mouse left the div!");
+                    //window.alert("The mouse left the div!");
+                }
+            });
+            $("div").after("<br><br><div><span>This is my second div tag</span></div>");
+            $("div").css({"width": "400px", "height": "400px", "background-color": "green"});
+            $("span").on({
+                click: function() {
+                    window.alert("You clicked on the div!");
+                },
+                mouseenter: function() {
+                    window.console.log("Hovered over the div!");
+                    //window.alert("Hovered over the div!");
+                },
+                mouseleave: function() {
+                    window.console.log("The mouse left the div!");
+                    //window.alert("The mouse left the div!");
+                }
+            });
+            $("div:contains(second div)").after("<br><a>modulemedia.com</a>");
+            $("a").attr("href", "http://www.modulemedia.com");
+            $("a").click(function(event) {
+                var element = $(this);
+                if (element.attr("href").match("modulemedia")){
+                    event.preventDefault();
+                    element.addClass("modulemedia");
+                    element.css('color', 'red');
+                    alert(event.target.nodeName);
+                }
             })
+
         });
     </script>
 </head>
