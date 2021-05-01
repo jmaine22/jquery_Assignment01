@@ -76,7 +76,17 @@
                     $('.Wsize').text($(window).width());
                 });
             });
-
+            $("div:contains(Wsize:)").after('<br><input type="text"/>');
+            $(function(){
+                $("input").focus(function(){
+                    let element = $('input');
+                    element.css({"background-color": "#D3D3D3"});
+                });
+                $("input").focusout(function(){
+                    let element = $('input');
+                    element.css({"background-color": "#fff"});
+                });
+            });
         });
     </script>
 </head>
