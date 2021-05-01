@@ -76,7 +76,7 @@
                     $('.Wsize').text($(window).width());
                 });
             });
-            $("div:contains(Wsize:)").after('<br><input type="text"/>');
+            $("div:contains(Wsize:)").after('<input type="text"/>');
             $(function(){
                 $("input").focus(function(){
                     let element = $('input');
@@ -87,6 +87,26 @@
                     element.css({"background-color": "#fff"});
                 });
             });
+            $("input").after('<br><br><form>Name:<input type="text" name="uname"/><br><br>email:<input type="text" name="email"/><br><br><input type="submit" value="Submit"/>');
+            $(function(){
+                $("form").submit(function(){
+                    let element1 = $("input[name='uname']");
+                    let element2 = $("input[name='email']");
+                    if (element1.val().length === 0 || element2.val().length === 0 ){
+                        alert("This field is required.");
+                        if (element1.val().length === 0){
+                            element1.css({"border": "2px solid red"});
+                        }
+                        else if (element2.val().length === 0){
+                            element2.css({"border": "2px solid red"});
+                        }
+                    }
+                    else if (element1.val().length > 0 && element2.val().length > 0 ) {
+                        element1.css({"border": "2px solid green"});
+                        element2.css({"border": "2px solid green"});
+                    }
+                })
+            })
         });
     </script>
 </head>
